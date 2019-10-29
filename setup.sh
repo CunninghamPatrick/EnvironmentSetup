@@ -38,14 +38,14 @@ ssh-keygen
 read -p 'username for purdue: ' user
 read -p 'hostname for purdue: ' host
 ssh-copy-id $user@$host
-sed -i "/s/PURDUEUSER/$user/g" ~/.bash_aliases
-sed -i "/s/PURDUEHOST/$user/g" ~/.bash_aliases
+sed -i "s/PURDUEUSER/$user/g" ~/.bash_aliases
+sed -i "s/PURDUEHOST/$host/g" ~/.bash_aliases
 
 read -p 'username for home: ' user
 read -p 'hostname for home: ' host
 ssh-copy-id -p 5273 $user@$host
-sed -i "/s/HOMEUSER/$user/g" ~/.bash_aliases
-sed -i "/s/HOMEHOST/$user/g" ~/.bash_aliases
+sed -i "s/HOMEUSER/$user/g" ~/.bash_aliases
+sed -i "s/HOMEHOST/$host/g" ~/.bash_aliases
 
 source ~/.bashrc
 
