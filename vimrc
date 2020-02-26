@@ -83,6 +83,13 @@ nnoremap <space> za
 " ensure vim is using utf-8 encoding for python
 au BufNewFile,BufRead *.py set encoding=utf-8
 
+" auto save and load vim view
+augroup AutoSaveFOlds
+    autocmd!
+    autocmd BufWinLeave * mkview
+    autocmd BufWinEnter * silent loadview
+augroup END
+
 " customize YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
