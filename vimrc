@@ -61,6 +61,9 @@ set ruler
 " Press space to clear search highlighting and any message already displayed.
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 
+" Ctrl+N to toggle line numbers
+nnoremap <silent> <C-n> :set invnumber<CR>
+
 " set preferred splitting behavior
 set splitbelow
 set splitright
